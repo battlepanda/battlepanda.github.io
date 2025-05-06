@@ -125,7 +125,7 @@ function showSecondStep(symptom) {
         btn.onclick = () => {
             const { diagnosis, aid } = options[opt];
             container.innerHTML = '';
-            output.innerHTML = `<strong>Diagnosis:</strong> ${diagnosis}<br><strong>First Aid:</strong> ${aid}`;
+            output.innerHTML = `<strong>Diagnosis:</strong> ${diagnosis}<br><br><strong>First Aid:</strong> ${aid}`;
             const resetBtn = document.createElement('button');
             resetBtn.textContent = "Start Over";
             resetBtn.onclick = reset;
