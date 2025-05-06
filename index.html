@@ -10,11 +10,22 @@
     </script>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Medical Aid Demo 1.0</title>
+
+<style>
+  #settings-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+</style>
 </head>
+
 <body>
-    <div class="settings-icon">
-        <button onclick="window.location.href='settings.html'">⚙️</button>
-    </div>
+    <button id="settings-button" onclick="location.href='settings.html'">⚙️</button>
     <div class="container">
         <h1 id="main-title">Medical Aid Demo 1.0</h1>
         <p id="select-symptom">Select symptom:</p>
