@@ -14,6 +14,8 @@
 <body>
     <div class="container">
         <h1>Settings</h1>
+
+        <h2>Theme</h2>
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle">
@@ -21,6 +23,14 @@
             </label>
             <span>Toggle Dark Mode</span>
         </div>
+
+        <h2>Language</h2>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <button id="lang-en" onclick="setLanguage('en')">English</button>
+            <button id="lang-es" disabled style="opacity: 0.4;">Español (Coming Soon)</button>
+            <button id="lang-fr" disabled style="opacity: 0.4;">Français (Coming Soon)</button>
+        </div>
+
         <br><br>
         <button onclick="window.location.href='index.html'">Back to Main</button>
     </div>
