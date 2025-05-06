@@ -117,12 +117,13 @@ function reset() {
 
 
 
+
 function showSecondStep(symptom) {
   const container = document.getElementById('symptoms');
   const output = document.getElementById('diagnosis');
   container.innerHTML = '';
-  output.innerHTML = `<strong>${sharedSymptoms[symptom].question}</strong><br><br>`;
   document.getElementById('select-symptom').style.display = 'none';
+  output.innerHTML = `<strong>${sharedSymptoms[symptom].question}</strong><br><br>`;
   const options = sharedSymptoms[symptom].options;
   const sortedOptions = Object.keys(options).sort();
   sortedOptions.forEach(opt => {
@@ -134,7 +135,30 @@ function showSecondStep(symptom) {
     btn.style.padding = "1rem";
     btn.style.fontSize = "1rem";
     btn.onclick = () => {
-      output.innerHTML = `<strong>${symptom} → ${opt}</strong><br><br><strong>Diagnosis:</strong> ${options[opt][0]}<br><br><strong>First Aid:</strong> ${options[opt][1]}<br><br><br><br>`;
+      const [diag, aid] = options[opt];
+      container.innerHTML = '';
+      output.innerHTML = `<strong>${symptom} → ${opt}</strong><br><br><strong>Diagnosis:</strong> ${diag}<br><br><strong>First Aid:</strong> ${aid}<br><br><br>`;
+
+      const aiSection = document.createElement('div');
+      aiSection.innerHTML = `<strong>AI Integration</strong><br>`;
+      if (localStorage.getItem("enableAI") === "true") {
+        if (navigator.onLine) {
+          aiSection.innerHTML += "<em>Querying AI...</em>";
+          const prompt = `Show me the steps to address the following scenario: ${symptom} → ${opt}. Diagnosis: ${diag}. First Aid: ${aid}`;
+          setTimeout(() => {
+            aiSection.innerHTML = `<strong>AI Integration</strong><br><ul>
+              <li>Identify scenario: ${symptom} → ${opt}</li>
+              <li>Confirm diagnosis: ${diag}</li>
+              <li>Apply first aid: ${aid}</li>
+              <li>Evacuate if needed</li>
+            </ul>`;
+          }, 1000);
+        } else {
+          aiSection.innerHTML += "<em>No Internet</em>";
+        }
+        output.appendChild(aiSection);
+      }
+
       const resetBtn = document.createElement('button');
       resetBtn.textContent = "Start Over";
       resetBtn.style.display = "block";

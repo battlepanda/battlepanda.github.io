@@ -6,34 +6,82 @@
     <script>
       if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.classList.add('dark-mode');
+        document.body.classList.add('dark-mode');
       }
     </script>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Settings</title>
+    <style>
+      body.dark-mode {
+        background-color: #121212;
+        color: #f0f0f0;
+      }
+      .dark-mode button {
+        background-color: #1f1f1f;
+        color: #f0f0f0;
+        border: 1px solid #444;
+      }
+      .dark-mode h1, .dark-mode h2 {
+        color: #ffffff;
+      }
+      .container {
+        max-width: 500px;
+        margin: auto;
+        padding: 2rem;
+        text-align: center;
+      }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Settings</h1>
+  <div class="container">
+    <h1>Settings</h1>
 
-        <h2>Theme</h2>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider"></span>
-            </label>
-            <span>Toggle Dark Mode</span>
-        </div>
-
-        <h2>Language</h2>
-        <div style="display: flex; justify-content: center; gap: 10px;">
-            <button id="lang-en" onclick="setLanguage('en')">English</button>
-            <button id="lang-es" disabled style="opacity: 0.4;">Español (Coming Soon)</button>
-            <button id="lang-fr" disabled style="opacity: 0.4;">Français (Coming Soon)</button>
-        </div>
-
-        <br><br>
-        <button onclick="window.location.href='index.html'">Back to Main</button>
+    <h2>Theme</h2>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+      </label>
+      <span>Toggle Dark Mode</span>
     </div>
-    <script src="js/settings.js"></script>
+
+    <h2>Language</h2>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <button id="lang-en" disabled style="opacity: 1;">English</button>
+      <button id="lang-es" disabled style="opacity: 0.4;">Español (Coming Soon)</button>
+      <button id="lang-fr" disabled style="opacity: 0.4;">Français (Coming Soon)</button>
+    </div>
+
+    <h2>AI Integration</h2>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <label class="switch">
+        <input type="checkbox" id="ai-toggle">
+        <span class="slider"></span>
+      </label>
+      <span>Enable AI Integration</span>
+    </div>
+
+    <br><br>
+    <button onclick="window.location.href='index.html'">Back to Main</button>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById("darkModeToggle");
+    const aiToggle = document.getElementById("ai-toggle");
+
+    themeToggle.checked = localStorage.getItem("theme") === "dark";
+    aiToggle.checked = localStorage.getItem("enableAI") === "true";
+
+    themeToggle.addEventListener("change", () => {
+      const newTheme = themeToggle.checked ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      document.documentElement.classList.toggle("dark-mode", newTheme === "dark");
+      document.body.classList.toggle("dark-mode", newTheme === "dark");
+    });
+
+    aiToggle.addEventListener("change", () => {
+      localStorage.setItem("enableAI", aiToggle.checked ? "true" : "false");
+    });
+  </script>
 </body>
 </html>
