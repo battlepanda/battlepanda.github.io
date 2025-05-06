@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Settings</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Settings</h1>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+            <span>Toggle Dark Mode</span>
+        </div>
+        <br><br>
+        <button onclick="window.location.href='index.html'">Back to Main</button>
+    </div>
+    <script src="js/settings.js"></script>
+</body>
+</html>
