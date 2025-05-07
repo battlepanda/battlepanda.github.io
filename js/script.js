@@ -146,12 +146,25 @@ function showSecondStep(symptom) {
           aiSection.innerHTML += "<em>Querying AI...</em>";
           const prompt = `Show me the steps to address the following scenario: ${symptom} → ${opt}. Diagnosis: ${diag}. First Aid: ${aid}`;
           setTimeout(() => {
-            aiSection.innerHTML = `<strong>AI Integration</strong><br><ul>
-              <li>Identify scenario: ${symptom} → ${opt}</li>
-              <li>Confirm diagnosis: ${diag}</li>
-              <li>Apply first aid: ${aid}</li>
-              <li>Evacuate if needed</li>
-            </ul>`;
+            aiSection.innerHTML = `<strong>AI Integration</strong><br>
+    <div style='text-align:left;'>
+    <h3>🚨 First Aid for ${diag}</h3>
+    <strong>✅ Step-by-Step Instructions</strong><br><br>
+    <ul>
+      <li><strong>Ensure Safety:</strong><br>
+        - Move the person away from the source of danger.<br>
+        - Eliminate ongoing exposure if possible (heat, chemicals, etc.).</li><br>
+      <li><strong>Initial Care:</strong><br>
+        - ${aid}</li><br>
+      <li><strong>Do NOT:</strong><br>
+        - Do not worsen the injury or delay treatment.<br>
+        - Avoid unverified home remedies or harmful materials.</li><br>
+      <li><strong>Relieve Pain:</strong><br>
+        - Provide over-the-counter medication if necessary and available.</li><br>
+      <li><strong>Evacuate or Seek Help If:</strong><br>
+        - Injury is severe, involves sensitive areas, or if the patient is vulnerable (children, elderly).</li>
+    </ul>
+    </div>`;
           }, 1000);
         } else {
           aiSection.innerHTML += "<em>No Internet</em>";

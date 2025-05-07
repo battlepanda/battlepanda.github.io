@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f0f0f0;
+      color: #000;
+    }
+    html.dark-mode body {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    h1, h2 {
+      margin-top: 2rem;
+    }
+    .dark-mode h1, .dark-mode h2 {
+      color: #ffffff;
+    }
+    button {
+      padding: 0.75rem 1rem;
+      margin-top: 2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+    .dark-mode button {
+      background-color: #1f1f1f;
+      color: #f0f0f0;
+      border-color: #444;
+    }
+  </style>
+  <script>
+    // Apply stored theme on page load
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark-mode");
+      document.body.classList.add("dark-mode");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+  <h1>About</h1>
+  <p>This application provides simple, accessible medical assistance guidance for use in emergency or wartime situations.</p>
+
+  <h2>Details</h2>
+  <p>This tool is designed for use in low-resource, high-pressure environments, offering touch-friendly navigation and offline accessibility. Content can be customised and expanded based on operational needs.</p>
+
+  <h2>Credits</h2>
+  <p>This project is supported by contributors focused on field medicine, humanitarian response, and mobile-first interface design. Future versions will include multilingual support and integration with field medical protocols.</p>
+
+  <h2>Contact</h2>
+  <p>For feedback, contributions, or inquiries, please reach out through your organisation's communication channels or submit updates via the support portal.</p>
+
+  <h2>Thank You</h2>
+    <p>Kiah Health, Baf Kuka</p>
+<img src="/img/KiahHealth.png" alt="Kiah Health Logo" style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 1rem auto;" />
+<img src="/img/FirstAId.png" alt="First Aid" style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 1rem auto;" />
+
+  <button onclick="window.location.href='index.html'">Back to Main</button>
+  </div>
+</body>
+</html>
