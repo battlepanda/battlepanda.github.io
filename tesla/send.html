@@ -55,7 +55,7 @@
         const wrapper = document.createElement("div");
         wrapper.style.marginBottom = "15px";
         wrapper.innerHTML = `
-          <strong>${item.label}</strong><br/>
+          <strong style="word-break: break-word; overflow-wrap: break-word; display: block; max-width: 100%;">${item.label}</strong><br/>
           <img src="${item.image}" alt="${item.label}" style="width:100%;max-width:300px;border:1px solid #444;border-radius:8px;margin-top:5px;" />
         `;
         listDiv.appendChild(wrapper);
