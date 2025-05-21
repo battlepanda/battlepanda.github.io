@@ -1,0 +1,73 @@
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    padding-bottom: 80px;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    margin-top: 20px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.menu-btn, .return-btn {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+}
+.return-btn {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.photo-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.photo-btn::before {
+    content: "📷";
+    font-size: 20px;
+    display: block;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+.clear-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
