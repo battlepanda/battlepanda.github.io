@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Medical Aid Demo 1.4</title>
+
+<style>
+  #settings-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+    <button id="settings-button" onclick="location.href='settings.html'">⚙️</button>
+    <div class="container">
+        <h1 id="main-title">Medical Aid Demo 1.4</h1>
+        <p id="select-symptom">Select symptom:</p>
+        <div id="symptoms" class="button-grid"></div>
+        <div id="diagnosis" class="output"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

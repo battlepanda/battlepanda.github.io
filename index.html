@@ -1,37 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark-mode');
-      }
-    </script>
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Medical Aid Demo 1.4</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BattlePanda Launcher</title>
 
 <style>
-  #settings-button {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-  }
+
+:root{
+    --bg:#0b1118;
+    --bg2:#111926;
+
+    --card:#17212d;
+    --cardHover:#1d2a3a;
+
+    --border:#2d3b52;
+
+    --text:#edf2f8;
+    --muted:#9ba9bc;
+
+    --accent:#55a8ff;
+    --accent2:#7ec4ff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    color:var(--text);
+
+    background:
+        radial-gradient(circle at top,#18253a 0%,#0b1118 55%),
+        var(--bg);
+
+    min-height:100vh;
+}
+
+.container{
+
+    width:min(1500px,95%);
+    margin:auto;
+    padding:18px 0;
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(310px,1fr));
+
+    gap:18px;
+}
+
+.card{
+
+    display:flex;
+    flex-direction:column;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    background:rgba(23,33,45,.88);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    transition:.22s;
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.30);
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--accent);
+
+    background:var(--cardHover);
+}
+
+.top{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.icon{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    font-size:22px;
+
+    background:
+        linear-gradient(135deg,#58acff,#3b6fff);
+
+    flex-shrink:0;
+}
+
+.title{
+
+    font-size:1.1rem;
+    font-weight:600;
+}
+
+.description{
+
+    margin-top:14px;
+
+    color:var(--muted);
+
+    font-size:.93rem;
+
+    line-height:1.45;
+}
+
+.launch{
+
+    margin-top:18px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    color:var(--accent2);
+
+    font-weight:600;
+
+    font-size:.92rem;
+}
+
+.launch span{
+
+    transition:.2s;
+}
+
+.card:hover .launch span{
+
+    transform:translateX(5px);
+}
+
+@media (max-width:600px){
+
+    .grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
-    <button id="settings-button" onclick="location.href='settings.html'">⚙️</button>
-    <div class="container">
-        <h1 id="main-title">Medical Aid Demo 1.4</h1>
-        <p id="select-symptom">Select symptom:</p>
-        <div id="symptoms" class="button-grid"></div>
-        <div id="diagnosis" class="output"></div>
-    </div>
-    <script src="js/script.js"></script>
+
+<div class="container">
+
+<div class="grid">
+
+<a class="card"
+href="https://battlepanda.github.io/Medical-Aid-Demo/index.html"
+target="_blank">
+
+<div class="top">
+
+<div class="icon">🏥</div>
+
+<div class="title">
+Medical Aid Demo
+</div>
+
+</div>
+
+<div class="description">
+
+Medical response demonstration showcasing the concept,
+interface and workflow.
+
+</div>
+
+<div class="launch">
+
+Launch <span>↗</span>
+
+</div>
+
+</a>
+
+
+
+<a class="card"
+href="https://battlepanda.github.io/kiah-health-website-concepts-revised-bundle/kiah-health-homepage-dark-revised.html"
+target="_blank">
+
+<div class="top">
+
+<div class="icon">🌙</div>
+
+<div class="title">
+Kiah Health Website (Dark)
+</div>
+
+</div>
+
+<div class="description">
+
+Dark mode concept for the Kiah Health website.
+
+</div>
+
+<div class="launch">
+
+Launch <span>↗</span>
+
+</div>
+
+</a>
+
+
+
+<a class="card"
+href="https://battlepanda.github.io/kiah-health-website-concepts-revised-bundle/kiah-health-homepage-light-revised.html"
+target="_blank">
+
+<div class="top">
+
+<div class="icon">☀️</div>
+
+<div class="title">
+Kiah Health Website (Light)
+</div>
+
+</div>
+
+<div class="description">
+
+Light mode concept for the Kiah Health website.
+
+</div>
+
+<div class="launch">
+
+Launch <span>↗</span>
+
+</div>
+
+</a>
+
+
+
+<a class="card"
+href="https://battlepanda.github.io/tesla/index.html"
+target="_blank">
+
+<div class="top">
+
+<div class="icon">⚡</div>
+
+<div class="title">
+Tesla Checklist App
+</div>
+
+</div>
+
+<div class="description">
+
+Interactive checklist application for Tesla owners.
+
+</div>
+
+<div class="launch">
+
+Launch <span>↗</span>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
 </body>
 </html>
