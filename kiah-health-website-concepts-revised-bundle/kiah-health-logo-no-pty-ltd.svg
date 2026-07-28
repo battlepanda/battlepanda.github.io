@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="250" viewBox="0 0 720 250" role="img" aria-label="KIAH Health logo">
+    <g transform="translate(12 18)">
+      <circle cx="35" cy="115" r="28" fill="#9DCC2D"/>
+      <rect x="80" y="18" width="57" height="194" rx="10" fill="#9DCC2D"/>
+      <path d="M150 112 L248 18 H322 L208 128 Z" fill="#9DCC2D"/>
+      <path d="M160 126 L220 78 L324 212 H246 Z" fill="#B6BEC2"/>
+      <text x="360" y="108" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="800" letter-spacing="1" fill="#9DCC2D">KIAH</text>
+      <text x="360" y="196" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="500" letter-spacing="-3" fill="#9AA7A5">Health</text>
+    </g>
+    </svg>
